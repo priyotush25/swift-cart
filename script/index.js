@@ -1,10 +1,20 @@
 const categoryContainer = document.getElementById("category-container");
 const productContainer = document.getElementById("product-container");
 
-const loadcateory = () =>{
+const loadCategory = () =>{
   fetch("https://fakestoreapi.com/products/categories")
   .then(res => res.json())
-  .then(data => console.log(data))
+  .then(data => displayCategory(data))
 }
 
-loadcateory();
+loadCategory();
+
+const displayCategory = (category) =>{
+  category.forEach(element => {
+    categoryContainer.innerHTML += `
+    
+    <p class="btn btn-outline font-medium">${element}</p>
+    
+    `
+  });
+}

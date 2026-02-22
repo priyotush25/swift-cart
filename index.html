@@ -5,22 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Swift-Cart | shopping</title>
 
-    <!-- Daysi UI -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- tailwind css -->
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Tailwind css -->
-    <script src="https://cdn.tailwindcss.com"></script>
+      <!-- daysiui -->
+       <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="stylesheet" href="/style/style.css" />
+  </head>
   </head>
   <body>
     <!-- Navbar -->
@@ -65,7 +57,7 @@
           </ul>
         </div>
         <div class="navbar-end">
-          <a class="btn">Button</a>
+          <a class="btn btn-outline">Button</a>
         </div>
       </div>
     </section>
@@ -74,9 +66,14 @@
     <section class="mt-20">
       <h1 class="text-5xl font-bold text-center">Our Products</h1>
 
-      <div id="category-container"></div>
+      <div
+        id="category-container"
+        class="flex flex-wrap items-center justify-center gap-5 mt-6"
+      ></div>
 
-      <div id="product-container"></div>
+      <div id="product-container">
+        <a class="btn btn-outline btn-primary">Button</a>
+      </div>
     </section>
 
     <!-- script -->
