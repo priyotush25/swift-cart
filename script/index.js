@@ -45,18 +45,18 @@ const displayProducts = (products) => {
       <div class="p-4 space-y-4">
 
         <div class="flex items-center justify-between">
-          <span class="text-blue-600">${product.category}</span>
+          <span class="text-blue-500">${product.category}</span>
           <p class="text-gray-500">${product.rating.rate} <span>(${product.rating.count})</span></p>
         </div>
 
         <div>
-          <h3 class="text-xl font-medium text-gray-600">${product.title}</h3>
+          <h3 class="text-xl font-medium text-gray-00">${product.title}</h3>
           <p class="text-xl font-semibold mt-4">$ ${product.price}</p>
         </div>
 
         <div class="flex items-center justify-between">
           <button class="btn">Details</button>
-          <button class="btn btn-primary text-white">Add</button>
+          <button class="btn bg-blue-500 text-white">Add</button>
         </div>
       </div>
       </div>
@@ -69,8 +69,20 @@ const displayProducts = (products) => {
 categoryContainer.addEventListener("click", (e) => {
   if (e.target.tagName.toLowerCase() === "p") {
     const category = e.target.innerText;
-    console.log(category);
-    if (category === "All") {
+
+    // আগের সব button থেকে active class remove
+    const allButtons = categoryContainer.querySelectorAll("p");
+    allButtons.forEach(btn => {
+      btn.classList.remove("bg-blue-500", "text-white");
+      btn.classList.add("btn-outline"); // normal style
+    });
+
+    // clicked button এ active class add
+    e.target.classList.add("bg-blue-500", "text-white");
+    e.target.classList.remove("btn-outline");
+
+    // Load products
+    if(category === "All"){
       loadProducts();
     } else {
       loadProductsByCategory(category);
