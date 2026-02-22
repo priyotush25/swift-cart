@@ -19,29 +19,19 @@
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
 
-    <style>
-      .poppins {
-        font-family: "Poppins", sans-serif;
-        font-weight: 100;
-        font-style: normal;
-      }
-    </style>
+    <link rel="stylesheet" href="/style/style.css" />
   </head>
   <body>
     <!-- Navbar -->
-    <section class="bg-base-100 shadow-sm">
-      <div class="navbar container mx-auto">
+    <section class="shadow-sm bg-base-100">
+      <div class="container mx-auto navbar">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
+                class="w-5 h-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -56,7 +46,7 @@
             </div>
             <ul
               tabindex="-1"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2"
+              class="p-2 mt-3 menu menu-sm dropdown-content bg-base-100 rounded-box z-1 w-52"
             >
               <li><a class="font-medium">Home</a></li>
               <li><a class="font-medium">Product</a></li>
@@ -64,10 +54,10 @@
               <li><a class="font-medium">Contact</a></li>
             </ul>
           </div>
-          <a class="font-bold text-xl">SwiftCart</a>
+          <a class="text-xl font-bold">SwiftCart</a>
         </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
+        <div class="hidden navbar-center lg:flex">
+          <ul class="px-1 menu menu-horizontal">
             <li><a class="font-medium">Home</a></li>
             <li><a class="font-medium">Product</a></li>
             <li><a class="font-medium">About</a></li>
@@ -84,10 +74,9 @@
     <section class="mt-20">
       <h1 class="text-5xl font-bold text-center">Our Products</h1>
 
-      <div
-        id="container"
-        class="flex items-center justify-center gap-4 mt-6"
-      ></div>
+      <div id="category-container"></div>
+
+      <div id="product-container"></div>
     </section>
 
     <!-- script -->
