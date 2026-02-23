@@ -77,10 +77,47 @@
         <p class="font-medium btn btn-outline">All</p>
       </div>
 
+      <!-- Product Container -->
       <div
         id="product-container"
         class="grid grid-cols-1 gap-5 mt-10 md:grid-cols-3"
       ></div>
+
+      <!-- Modal: must be outside product-container -->
+      <dialog id="my_modal_2" class="modal">
+        <div class="max-w-2xl p-6 modal-box">
+          <form method="dialog">
+            <button
+              class="absolute btn btn-sm btn-circle btn-ghost right-4 top-4"
+            >
+              ✕
+            </button>
+          </form>
+          <div class="flex justify-center">
+            <img
+              id="modalImage"
+              class="object-contain p-4 border rounded-lg w-52 h-52 bg-gray-50"
+            />
+          </div>
+          <div class="mt-6 text-center">
+            <h3 id="modalTitle" class="text-2xl font-bold text-primary"></h3>
+            <p id="modalCategory" class="mt-1 text-sm text-gray-500"></p>
+            <p
+              id="modalDescription"
+              class="py-4 leading-relaxed text-gray-600"
+            ></p>
+            <p class="text-xl font-semibold text-green-600">
+              $<span id="modalPrice"></span>
+            </p>
+            <div class="flex justify-center gap-4 mt-6">
+              <button class="btn btn-primary">Add to Cart</button>
+              <form method="dialog">
+                <button class="btn btn-outline">Close</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </dialog>
     </section>
 
     <!-- Footer -->
