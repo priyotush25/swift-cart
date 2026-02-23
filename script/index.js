@@ -123,3 +123,42 @@ const loadProductsByCategory = async (category) => {
 // ==================== Initialize ====================
 loadCategory();
 loadProducts();
+
+
+
+
+
+
+
+// Assuming you already have 'allProducts' array loaded from API
+const trendingContainer = document.getElementById("trending-container");
+
+// Option 1: Using API data (top 3 by rating)
+const displayTrendingProducts = () => {
+  if (!allProducts || allProducts.length === 0) return;
+
+  // Sort products by rating (descending) and take top 3
+  const topProducts = [...allProducts]
+    .sort((a, b) => b.rating.rate - a.rating.rate)
+    .slice(0, 3);
+
+  trendingContainer.innerHTML = "";
+
+  topProducts.forEach((product) => {
+    trendingContainer.innerHTML += `
+      <div class="rounded shadow-sm border border-gray-100 p-4 flex flex-col items-center hover:shadow-lg transition">
+        <div class="bg-gray-100 p-4 rounded mb-4 flex justify-center items-center w-full h-52">
+          <img src="${product.image}" class="h-40 object-contain" />
+        </div>
+        <h3 class="text-lg font-semibold mb-2 text-gray-800">${product.title}</h3>
+        <p class="text-green-600 font-bold mb-2">$ ${product.price}</p>
+        <p class="text-yellow-500 mb-2">⭐ ${product.rating.rate} (${product.rating.count})</p>
+        <button class="btn btn-primary mt-2" onclick="showDetails(${product.id})">Details</button>
+      </div>
+    `;
+  });
+};
+
+// Call this after loading products
+loadProducts().then(() => displayTrendingProducts());
+
