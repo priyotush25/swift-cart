@@ -3,3 +3,10 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+
+/* style.css */
+.hero-banner {
+  background-image: url("assets/banner-image.png");
+  background-size: cover;
+  background-position: center;
+}
